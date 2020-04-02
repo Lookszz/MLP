@@ -1,6 +1,6 @@
  To do:
 
-1.	Motivatie schrijven
+1.	Motivatie schrijven - Luuk, done
 
 2.	Meer artikelen
 
@@ -17,6 +17,9 @@
 	a. Preprocessing
 	b. Hoe implementeren wij de classifiers
 
-6.	Evaluatie
+6.	Evaluatie - Luuk, done
 
 7.	Discussie / analyse resultaten
+
+
+
