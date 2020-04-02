@@ -1,0 +1,22 @@
+ To do:
+
+1.	Motivatie schrijven
+
+2.	Meer artikelen
+
+3.	Materiaal:
+	a. Waar vandaan
+	b. Positieve kanten
+	c. Negatieve kanten
+	d. Kleine visualisatie van hoe het eruit ziet
+
+4.	Methode
+	a. Omschrijving algorithmes / classifiers (deels vanuit de intro)
+
+5.	Implementatie
+	a. Preprocessing
+	b. Hoe implementeren wij de classifiers
+
+6.	Evaluatie
+
+7.	Discussie / analyse resultaten
