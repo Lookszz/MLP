@@ -4,7 +4,10 @@ import collections
 
 from nltk.metrics import precision, recall
 from nltk.tokenize import word_tokenize
+from nltk.stem import LancasterStemmer
+from nltk.corpus import stopwords
 from random import shuffle
+
 
 
 # vanuit antionio zn code gepakt: moet nog omgetypt worden
@@ -47,8 +50,24 @@ def get_features(df):
         category = row[1]
         tokens = word_tokenize(row[2])
 
+        # lower
+        for token in tokens:
+            token.lower()
+
+        # remove stopwords
+        #stop_words = set(stopwords.words('english'))
+        #no_stopwords = []
+        #for token in tokens:
+            #if token not in stop_words:
+                #no_stopwords.append(token)
+
+        # stem
+        lancaster = LancasterStemmer()
+        lancaster_list = [lancaster.stem(token) for token in tokens]
+
         # create bag of words
-        bag = dict([(token, True) for token in tokens])
+        bag = dict([(token, True) for token in lancaster_list])
+
         
         # room for preprocessing data
 
