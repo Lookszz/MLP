@@ -6,7 +6,9 @@ from nltk.metrics import precision, recall
 from nltk.tokenize import word_tokenize
 from nltk.stem import LancasterStemmer
 from nltk.corpus import stopwords
+from string import punctuation
 from random import shuffle
+
 
 
 
@@ -50,9 +52,8 @@ def get_features(df):
         category = row[1]
         tokens = word_tokenize(row[2])
 
-        # lower
-        for token in tokens:
-            token.lower()
+        #lower
+        [token.lower() for token in tokens]
 
         # remove stopwords
         #stop_words = set(stopwords.words('english'))
@@ -61,12 +62,23 @@ def get_features(df):
             #if token not in stop_words:
                 #no_stopwords.append(token)
 
+        # remove punctuation
+        no_punct = []
+        for token in tokens:
+            if token not in punctuation:
+                no_punct.append(token)
+
+        # no numbers
+        no_integers = [token for token in no_punct if not (token.isdigit() or token[0] == '-' and token[1:].isdigit())]
+
         # stem
         lancaster = LancasterStemmer()
-        lancaster_list = [lancaster.stem(token) for token in tokens]
+        lancaster_list = [lancaster.stem(token) for token in no_integers]
 
         # create bag of words
         bag = dict([(token, True) for token in lancaster_list])
+        for item in bag:
+            print(item)
 
         
         # room for preprocessing data
