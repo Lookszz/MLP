@@ -43,7 +43,7 @@ def read_files(categories):
 		num_files=0
 		for f in files: 
 
-			data = open('Volkskrant/' + category + '/' + f, 'r', encoding='UTF-8').read()
+            data = open('Volkskrant/' + category + '/' + f, 'r', encoding='UTF-8').read()
 			#data = data.lower()
 			#data = porter.stem(data)
 			tokens = word_tokenize(data)
